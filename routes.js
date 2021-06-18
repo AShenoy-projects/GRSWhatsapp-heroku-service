@@ -59,7 +59,7 @@ router.post("/send", (req, res) => {
             return { id: fileId };
           });
           dbInterface.updateStatus(filesToUpdate, phoneNumber, __SENT, res);
-        } else res.send(_RESPONSEMSGS.__NORECORDS);
+        } else res.json(_RESPONSEMSGS.__NORECORDS);
       });
     }
   }
@@ -67,7 +67,7 @@ router.post("/send", (req, res) => {
 });
 
 router.get("", (req, res) => {
-  res.send("Ping Works!!");
+  res.json("Ping Works!!");
 });
 
 module.exports.router = router;
