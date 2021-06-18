@@ -2,10 +2,12 @@ const firebase = require("firebase-admin");
 const _RESPONSEMSGS = require("./constants/statusmsgs");
 const __LINK_EXPIRY_NO_OF_DAYS = 1;
 
-console.log(_RESPONSEMSGS);
-
 firebase.initializeApp({
-  credential: firebase.credential.applicationDefault(),
+  credential: firebase.credential.cert({
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+    client_email: process.env.FIREBASE_CLIENT_EMAIL,
+  }),
   databaseURL: process.env.DBURL,
 });
 
