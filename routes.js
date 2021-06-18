@@ -13,7 +13,8 @@ const __EXPECTED_BODY_TYPE = "user-event";
 const __EXPECTED_PAYLOAD_TYPE = "opted-in";
 const __MESSAGE_TO_SEND =
   "Hello, here's your video link: Active for 24 hours. Note: This demo app only supports links, in the production version this app sends the video directly. ";
-const __WELCOME_MSG = "Hope you are doing well.";
+const __WELCOME_MSG =
+  "Your request is being processed and you will receive your videos in a short while. Thank You!";
 
 //API for the front end
 router.post("/update", (req, res) => {
