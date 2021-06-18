@@ -1,0 +1,11 @@
+const _RESPONSEMSGS = {
+  __INVALID: { msg: "INVALID FORMAT" },
+  __NORECORDS: { msg: "ERROR: NO RECORDS FOUND" },
+  __MISMATCH: { msg: "PAYLOAD TYPE MISMATCH" },
+  __DBERROR: { msg: "DB ERROR" },
+  __SUCCESS: { msg: "SUCCESS" },
+  __BAD_REQUEST_STATUS: 400,
+  __INTERNAL_SERVER_ERROR_STATUS: 500,
+};
+
+module.exports = _RESPONSEMSGS;
