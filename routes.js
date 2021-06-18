@@ -13,6 +13,7 @@ const __EXPECTED_BODY_TYPE = "user-event";
 const __EXPECTED_PAYLOAD_TYPE = "opted-in";
 const __MESSAGE_TO_SEND =
   "Hello, here's your video link: Active for 24 hours. Note: This demo app only supports links, in the production version this app sends the video directly. ";
+const __WELCOME_MSG = "Hope you are doing well.";
 
 //API for the front end
 router.post("/update", (req, res) => {
@@ -59,15 +60,15 @@ router.post("/send", (req, res) => {
             return { id: fileId };
           });
           dbInterface.updateStatus(filesToUpdate, phoneNumber, __SENT, res);
-        } else res.json(_RESPONSEMSGS.__NORECORDS);
+        } else res.send(_RESPONSEMSGS.__NORECORDS);
       });
     }
   }
-  if (setHeader) res.send(_RESPONSEMSGS.__MISMATCH);
+  if (setHeader) res.send(__WELCOME_MSG);
 });
 
 router.get("", (req, res) => {
-  res.json("Ping Works!!");
+  res.send("Ping Works!!");
 });
 
 module.exports.router = router;
